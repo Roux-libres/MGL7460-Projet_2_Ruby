@@ -1,5 +1,5 @@
 require_relative "../Code/simple_number.rb"
-require "test/unit"
+require "test-unit"
 
 class TestSimpleNumber < Test::Unit::TestCase
 
