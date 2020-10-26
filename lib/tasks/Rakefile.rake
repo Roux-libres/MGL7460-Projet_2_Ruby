@@ -2,7 +2,7 @@
 
 require 'rubocop/rake_task'
 
-task default: %i[rubocop test]
+task default: %i[test rubocop]
 
 desc 'Run tests'
 task(:test) do
