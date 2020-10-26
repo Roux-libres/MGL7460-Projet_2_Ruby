@@ -2,9 +2,15 @@
 
 require 'rubocop/rake_task'
 
-desc 'Its new task for test'
-task :print_test do
+task default: %i[rubocop test]
+
+desc 'Run tests'
+task(:test) do
   puts 'Hello world'
 end
 
-RuboCop::RakeTask.new
+desc 'Run rubocop'
+task :rubocop do
+  RuboCop::RakeTask.new
+end
+
