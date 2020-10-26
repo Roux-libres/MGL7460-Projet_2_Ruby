@@ -11,6 +11,7 @@
 /tmp/
 /.idea
 /reports
+/test/reports
 
 # Used by dotenv library to load environment variables.
 # .env
