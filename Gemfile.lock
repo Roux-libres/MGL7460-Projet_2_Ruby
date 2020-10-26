@@ -21,6 +21,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-ast (1.0.1)
       parser (>= 2.7.1.5)
+    rubocop-checkstyle_formatter (0.4.0)
+      rubocop (>= 0.35.1)
     ruby-progressbar (1.10.1)
     test-unit (3.3.4)
       power_assert
@@ -32,6 +34,7 @@ PLATFORMS
 DEPENDENCIES
   rake
   rubocop
+  rubocop-checkstyle_formatter
   test-unit
 
 BUNDLED WITH

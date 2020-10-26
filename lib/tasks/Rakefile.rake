@@ -2,6 +2,7 @@
 
 require 'rake/testtask'
 require 'rubocop/rake_task'
+require 'rubocop/formatter/checkstyle_formatter'
 
 
 task default: %i[hello rubocop test]
@@ -15,7 +16,10 @@ desc 'Run rubocop'
 task :rubocop do
   RuboCop::RakeTask.new do |t|
     config_file = './lib/tasks/rubocop.yml'
-    t.options = ['-c', config_file, '--fail-level', 'F']
+    t.options = ['-c', config_file,
+                 '--fail-level', 'F',
+                 '--format', 'RuboCop::Formatter::CheckstyleFormatter', '-o','./reports/xml/checkstyle-result.xml',
+                 '--format', 'html', '-o', './reports/html/index.html']
   end
 end
 
