@@ -10,4 +10,5 @@ gem 'rake'
 gem 'rubocop'
 gem 'rubocop-checkstyle_formatter', require: false
 gem 'test-unit'
+gem 'launchy'
 
