@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 def read_file(uptime_file)
   if File.exist? uptime_file
     if !File.empty? uptime_file
@@ -24,8 +23,8 @@ end
 
 def display_time(time_type, time)
   message = Time.new.strftime('%H:%M:%S') + " #{time_type} "
-  message += time.days.positive? ? "#{time.days} day," : ''
-  message[message.length - 1] = time.days > 1 ? 's, ' : message[message.length - 1]
+  message += time.days.positive? ? "#{time.days} day, " : ''
+  message.insert(message.length - 2, 's') if time.days > 1
   message += time.hours.positive? ? "#{time.hours}:#{time.minutes}" : "#{time.minutes} min"
   puts message
 end
