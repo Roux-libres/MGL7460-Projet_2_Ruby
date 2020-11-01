@@ -1,13 +1,9 @@
+# frozen_string_literal: true
+
 def read_file(uptime_file)
-  if File.exist? uptime_file
-    if !File.empty? uptime_file
-      File.read(uptime_file)
-    else
-      puts('File is empty')
-    end
-  else
-    puts('File does not exist')
-  end
+  raise('File doest not exist') unless File.exist? uptime_file
+
+  File.read(uptime_file)
 end
 
 def parse_time(time)
@@ -29,9 +25,12 @@ def display_time(time_type, time)
   puts message
 end
 
-uptime_file = '../uptime_file.txt'
-times = read_file(uptime_file).split
-unless times.empty?
+
+if __FILE__ == $PROGRAM_NAME
+  uptime_file = '../uptime_file.txt'
+  times = read_file(uptime_file).to_s.split
+  raise('empty file') unless times.empty?
+
   uptime = parse_time(times[0])
   idletime = parse_time(times[1])
   display_time('up', uptime)
