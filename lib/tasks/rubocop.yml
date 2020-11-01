@@ -1,4 +1,4 @@
 AllCops:
   Include:
     - 'Code/**/*'
-    - 'Tests/**/*'
+    - 'test/**/*'
