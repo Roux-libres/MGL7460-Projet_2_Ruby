@@ -4,7 +4,6 @@ require_relative '../Code/MGL7460_Projet_2_ruby'
 require 'test-unit'
 
 class TestMGL7460Projet2Ruby < Test::Unit::TestCase
-
   def test_parse_time
     expected_result = Struct.new(:days, :hours, :minutes).new
     expected_result.days = 173
@@ -26,5 +25,4 @@ class TestMGL7460Projet2Ruby < Test::Unit::TestCase
     assert_equal('', read_file('test/empty_file_test.txt'))
     assert_equal(expected_read, read_file('test/file_test.txt'))
   end
-
 end
