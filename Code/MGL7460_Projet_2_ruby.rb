@@ -25,11 +25,10 @@ def display_time(time_type, time)
   puts message
 end
 
-
 if __FILE__ == $PROGRAM_NAME
   uptime_file = '../uptime_file.txt'
   times = read_file(uptime_file).to_s.split
-  raise('empty file') unless times.empty?
+  raise('empty file') if times.empty?
 
   uptime = parse_time(times[0])
   idletime = parse_time(times[1])
