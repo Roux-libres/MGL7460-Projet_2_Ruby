@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
+# read file and get his content thanks to his path
+# input name:uptime_file type:string description:path
+# output type:string
 def read_file(uptime_file)
   raise('File doest not exist') unless File.exist? uptime_file
 
   File.read(uptime_file)
 end
 
+# Parse the initial time
+# input name:time type:string
+# output type:string[]
 def parse_time(time)
   result = Struct.new(:days, :hours, :minutes).new
   time = time.to_i
@@ -17,6 +23,10 @@ def parse_time(time)
   result
 end
 
+# Create a specific message depending on his content and display it
+# input name:time_type type:string  description:type of time
+# input name:time type:string  description:file's content
+# output type: void
 def display_time(time_type, time)
   message = Time.new.strftime('%H:%M:%S') + " #{time_type} "
   message += time.days.positive? ? "#{time.days} day, " : ''

@@ -5,7 +5,6 @@ require 'rubocop/rake_task'
 require 'rubocop/formatter/checkstyle_formatter'
 require 'test-unit'
 require 'ci/reporter/rake/test_unit'
-require 'launchy'
 
 desc 'Default build'
 task default: %i[test]
